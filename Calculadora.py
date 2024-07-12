@@ -4,7 +4,8 @@ operacao = {
     '-': 'Subtração',
     '*': 'Multiplicação',
     '/': 'Divisão',
-    '^': 'Exponenciação'
+    '^': 'Exponenciação',
+    'Sair': 'Sair'
 }
 
 while True:
@@ -22,7 +23,7 @@ while True:
         continue
 
     operador_string = list(operacao.keys())[operador]
-    print(f'\nOperador selecionado: {operador_string}\n ')
+    print(f'\nOperação selecionado: {operador_string}\n ')
     resultado = 0
     valor_01 = float(input('Digite o primeiro valor: '))
     valor_02 = float(input('Digite o segundo valor: '))
@@ -40,6 +41,8 @@ while True:
             resultado = valor_01 / valor_02
     elif operador == 4:
         resultado = valor_01 ** valor_02
+    elif operador == 5:
+        exit()
 
     print(f'{valor_01} {operador_string} {valor_02} = {resultado}')
 
