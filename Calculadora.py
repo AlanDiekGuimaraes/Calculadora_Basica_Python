@@ -1,4 +1,4 @@
-print(50 * '=')
+
 operacao = {
     '+': 'Soma',
     '-': 'Subtração',
@@ -9,12 +9,13 @@ operacao = {
 }
 
 while True:
+    print(50 * '=')
     contador = 0
     nome = ''
     for operador, nome in operacao.items():
         print(contador, ':', nome)
         contador += 1
-
+    print(50 * '=')
     try:
         operador = int(input('Escolha a operação que deseja realizar: '))
         if operador < 0 or operador >= len(operacao):
@@ -47,15 +48,15 @@ while True:
 
         print(f'{valor_01} {operador_string} {valor_02} = {resultado}')
 
+        while True:
+            opcao = input("Deseja realizar outra operação? 1 = SIM, 2 = NÃO  ")
+            if opcao != '1' and opcao != '2':
+                print('Opção invalida, tente novamente')
+            elif opcao == '1':
+                break
+            elif opcao == '2':
+                exit()
     except ValueError:
         print('Você digitou algum valor invalido, tente novamente.')
 
 
-    while True:
-        opcao = input("Deseja realizar outra operação? 1 = SIM, 2 = NÃO  ")
-        if opcao != '1' and opcao != '2':
-            print('Opção invalida, tente novamente')
-        elif opcao == '1':
-            break
-        elif opcao == '2':
-            exit()
